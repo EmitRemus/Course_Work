@@ -1,0 +1,370 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.navbar {
+    background-color: green;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-links li {
+    padding: 0 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.nav-links a:hover {
+    background-color: green;
+    border-radius: 5px;
+}
+
+.nav-links-container {
+    display: none;
+    background-color: #fff;
+    width: 100%;
+    max-width: 300px;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    z-index: 1000;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.nav-links-container .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nav-links-container .nav-links li {
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.nav-links-container .nav-links a {
+    color: green;
+}
+
+.nav-links-container .nav-links a:hover {
+    background-color: #f0f0f0;
+}
+
+.signup-container,
+.login-container,
+.forgot-password-container{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 100px auto 50px;
+}
+
+.signup-form,
+.login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form h2,
+.login-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input {
+    width: 280px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: green;
+}
+
+.password-generator {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.password-display {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+.password-display .password-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: calc(100% - 90px);
+    text-align: left;
+}
+
+.password-display button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+#generate-password {
+    color: black;
+}
+
+#copy-password {
+    color: black;
+}
+
+.password-options {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.password-options h2 {
+    margin-bottom: 20px;
+}
+
+.option {
+    margin-bottom: 15px;
+}
+
+.checkbox-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.checkbox-group input[type="checkbox"] {
+    accent-color: green;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #ddd;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: green;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: green;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.info-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links-container {
+        display: none;
+    }
+
+    .password-generator {
+        width: 90%;
+    }
+
+    .info-container {
+        width: 90%;
+    }
+}
+.dashboard-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 100px auto 50px;
+    text-align: center;
+}
+
+.password-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.password-table th, .password-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.password-table th.actions-column,
+.password-table td.actions-column {
+    width: 120px; /* Adjust width as needed */
+    text-align: center;
+}
+
+.password-table th {
+    background-color: #f0f0f0;
+}
+
+.password-table td {
+    background-color: #fff;
+}
+
+.password-table button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 2px;
+    padding: 0;
+}
+
+.password-table .edit-btn {
+    color: #007bff;
+}
+
+.password-table .copy-btn {
+    color: #28a745;
+}
+
+.password-table .delete-btn {
+    color: #dc3545;
+}
+
+.password-table button:hover {
+    opacity: 0.7;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input {
+    width: calc(100% - 22px);  /* Adjust for padding and border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    {% if passwords %}
+        <h2>Your Passwords</h2>
+        <table class="password-table">
+            <thead>
+                <tr>
+                    <th>What for</th>
+                    <th>Password</th>
+                    <th class="actions-column">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in passwords %}
+                <tr>
+                    <td>{{ item.what_for }}</td>
+                    <td class="password">{{ item.password }}</td>
+                    <td class="actions-column">
+                        <button class="edit-btn" onclick="window.location.href='{{ url_for('edit_password', id=item.password_id) }}'">✏️</button>
+                        <button class="copy-btn" onclick="copyToClipboard('{{ item.password }}')">📋</button>
+                        <button class="delete-btn" onclick="window.location.href='{{ url_for('delete_password', id=item.password_id) }}'">🗑️</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <h2>Enter Passcode</h2>
+        <form method="POST" action="{{ url_for('dashboard') }}">
+            <div class="form-group">
+                <label for="passcode">Passcode</label>
+                <input type="password" id="passcode" name="passcode" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        {% if session.get('passcode_error') %}
+            <p class="error">{{ session.get('passcode_error') }}</p>
+        {% endif %}
+    {% endif %}
+</div>
+
+<script>
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        alert('Password copied to clipboard');
+    }, function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+</script>
+{% endblock %}
